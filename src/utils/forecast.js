@@ -9,7 +9,8 @@ const forecast = (latitude,longitude, callback) =>{
         }else if(body.error){
             callback('Imposible encontrar locacion',undefined)
         }else{
-            callback(undefined, body.daily.data[0].summary+' Actualmente estamos a '+body.currently.temperature+' grados afuera. Hay '+body.currently.precipProbability+'% probabilidades de precipitaciones')
+            callback(undefined, body.daily.data[0].summary+' Actualmente estamos a '+body.currently.temperature+' grados afuera. Hay '+body.currently.precipProbability+'% probabilidades de precipitaciones \n'
+            +'La Maxima para hoy es '+body.daily.data[0].temperatureHigh+' y la minima para hoy es '+body.daily.data[0].temperatureLow)
         }
     })
 }
